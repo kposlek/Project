@@ -27,8 +27,8 @@ export class UsersComponent implements OnInit {
         },
 
         isActive: true,
-
-        registered: new Date('01/02/2018 08:30:00')
+        registered: new Date('01/02/2018 08:30:00'),
+        hide: true
       },
       {
         firstName: 'Kristian',
@@ -41,8 +41,8 @@ export class UsersComponent implements OnInit {
         },
 
         isActive: false,
-
-        registered: new Date('03/11/2017 06:20:00')
+        registered: new Date('03/11/2017 06:20:00'),
+        hide: true
       },
       {
         firstName: 'Ivana',
@@ -55,8 +55,8 @@ export class UsersComponent implements OnInit {
         },
 
         isActive: true,
-
-        registered: new Date('11/02/2016 10:30:00')
+        registered: new Date('11/02/2016 10:30:00'),
+        hide: true
       }
     ];
     this.loaded = true;
@@ -64,4 +64,11 @@ export class UsersComponent implements OnInit {
   addUser(user: User) {
     this.users.push(user);
   }
+  fireEvent(e) {
+    // console.log('Button Clicked');
+    console.log(e.type);
+  }
+  //   toggleHide(user: User) {
+  //     user.hide = !user.hide;
+  //   }
 }
