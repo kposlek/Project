@@ -55,18 +55,13 @@ export class UserComponent implements OnInit {
     this.user = {
       firstName: 'Karolina',
       lastName: ' Poslek',
-      age: 34,
-      address: {
-        street: 'Landsberger Straße 133b',
-        city: 'Munich',
-        state: 'Germany'
-      }
+      email: 'karolina@poslek.com'
     };
   }
-  //   showAge() {
-  //     return this.age;
-  //   }
-  //   addNumbers(num1: number, num2: number): number {
-  //     return num1 + num2;
-  //   }
 }
+//   showAge() {
+//     return this.age;
+//   }
+//   addNumbers(num1: number, num2: number): number {
+//     return num1 + num2;
+//   }
