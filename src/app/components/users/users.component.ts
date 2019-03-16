@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { User } from '../../models/User';
 import { nullSafeIsEquivalent } from '@angular/compiler/src/output/output_ast';
 
@@ -18,6 +18,7 @@ export class UsersComponent implements OnInit {
   loaded: boolean = false;
   enableAdd: boolean = false;
   showUserForm: boolean = false;
+  @ViewChild('userForm') form: any;
 
   constructor() {}
 
@@ -52,16 +53,16 @@ export class UsersComponent implements OnInit {
     ];
     this.loaded = true;
   }
-  //   addUser() {
-  //     this.user.isActive = true;
-  //     this.user.registered = new Date();
-  //     this.users.unshift(this.user);
-  //     this.user = {
-  //       firstName: '',
-  //       lastName: '',
-  //       email: ''
-  //     };
-  //   }
 
-  onSubmit(e) {}
+  onSubmit({ value, valid }: { value: User; valid: boolean }) {
+    if (!valid) {
+      console.log('Form is not valid');
+    } else {
+      value.isActive = true;
+      value.registered = new Date();
+      value.hide = true;
+      this.users.unshift(value);
+      this.form.reset();
+    }
+  }
 }
